@@ -1,0 +1,9 @@
+@import "../../1-settings/scss/_settings";
+
+// Ajuste para garantizar que el contenido de la página se mantenga en el área segura en los Iphones
+main {
+  @media only screen and (orientation: landscape) {
+    padding-left: max(0, env(safe-area-inset-left));
+    padding-right: max(0, env(safe-area-inset-right));
+  }
+}

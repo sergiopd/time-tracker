@@ -1,0 +1,9 @@
+@mixin contenedor-ul($flow, $al-items, $al-content, $justify) {
+  display: flex;
+  flex-flow: $flow;
+  align-content: $al-content;
+  align-items: $al-items;
+  justify-content: $justify;
+  height: auto;
+  list-style: none;
+}

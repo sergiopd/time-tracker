@@ -1,0 +1,15 @@
+@use "sass:map";
+@use "sass:color";
+
+.ui-time-tracker {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0.5em;
+  width: fit-content;
+  margin: 40px auto;
+  background-color: #e9e9e9;
+  border-radius: 100px;
+}

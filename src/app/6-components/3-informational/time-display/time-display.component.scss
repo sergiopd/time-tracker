@@ -1,0 +1,37 @@
+@use "sass:map";
+
+@import "../../../1-settings/scss/_settings.scss";
+@import "../../../2-tools/scss/_tools.scss";
+
+.time-display {
+  // flex: 1 0 min(110px, max(70px, max(6em, calc((576px - 100vw) * -999))));
+  flex: 0 0 auto;
+  font-size: 0.75rem;
+  margin: 0 .91666em 0 1.333em;
+
+  .counter {
+    display: block;
+    font: normal 400 .75rem map.get($font, "sanserif");
+    color: var(--button-font, #FFFFFF);
+    border-radius: 100px;
+    vertical-align: middle;
+    text-align: center;
+    transition: width 0.3s display 0.3s;
+
+    &.-timeWorked {
+      color: var(--time-active, #000000);
+    }
+
+    &.-timeAcum {
+      color: var(--time-acum, #B5B5B5);
+    }
+
+    &.-inactive {
+      display: none;
+    }
+
+    @include mayor-a-celular {
+      display: inline-block;
+    }
+  }
+}

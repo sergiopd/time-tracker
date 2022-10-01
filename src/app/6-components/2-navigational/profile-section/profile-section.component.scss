@@ -1,0 +1,63 @@
+@use "sass:map";
+@import "../../../1-settings/scss/__settings.scss";
+@import "../../../2-tools/scss/__tools.scss";
+
+.profile-section {
+  display: flex;
+  flex: 1 0 auto;
+  width: max(196px, min(90vw, calc((100vw - 576px - 1px) * -999)));
+  margin: max(0px, min(15px, calc((100vw - 576px - 1px) * -999))) 0 0 0;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 0.75rem;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 1.666em;
+    border-left: 1px solid var(--profile-separator, #B5B5B5);
+    position: relative;
+  }
+
+  >.photoProfile {
+    margin-left: 1.333em;
+    height: 2em;
+    width: 2em;
+    border-radius: 50%;
+  }
+
+  >.status {
+    display: inline-block;
+    position: relative;
+    left: -0.375em;
+    height: 0.75em;
+    width: 0.75em;
+    margin-right: 0.6666em;
+    background-color: var(--status, #5EBEA3);
+    border-radius: 50%;
+  }
+
+  >.userName {
+    margin: 0 .41666em 0 0.6666em;
+    font: normal 800 1.25em map.get($font, "sanserif");
+    color: var(--user-name, #3F3F3F);
+  }
+
+  >.arrowDown {
+    height: 1.1666em;
+    margin: .25em 1.41666em 0 .41666em;
+    transform: scaleY(1);
+    // transform: rotate(0deg);
+    // transform-origin: 50% 50%;
+    transition: transform 0.3s;
+
+    &.-rotateY {
+      transform: scaleY(-1);
+      // transform: rotate(180deg);
+      // transform-origin: 50% 50%;
+    }
+  }
+
+}

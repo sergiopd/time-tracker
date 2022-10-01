@@ -1,0 +1,10 @@
+<div class="ui-time-tracker">
+  <time-display-component></time-display-component>
+
+  <button-time-tracker
+    *ngFor="let info of buttonsInfo"
+    [infoToApply]="info"
+  ></button-time-tracker>
+
+  <profile-section-component></profile-section-component>
+</div>

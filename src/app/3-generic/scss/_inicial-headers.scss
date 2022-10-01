@@ -1,0 +1,70 @@
+@import "../../1-settings/scss/__settings.scss";
+@import "../../2-tools/scss/__tools.scss";
+
+h1 {
+  display: block;
+  font-size: 1.65rem;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+
+  @include mayor-a-celular {
+    font-size: 2rem;
+  }
+}
+
+h2 {
+  display: block;
+  font-size: 1.35em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+
+  @include mayor-a-celular {
+    font-size: 1.5em;
+  }
+}
+
+h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+h4 {
+  display: block;
+  font-size: 1rem;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+h5 {
+  display: block;
+  font-size: 0.83rem;
+  margin-block-start: 1.67em;
+  margin-block-end: 1.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+h6 {
+  display: block;
+  font-size: 0.67rem;
+  margin-block-start: 2.33em;
+  margin-block-end: 2.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}

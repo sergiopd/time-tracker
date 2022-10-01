@@ -1,0 +1,80 @@
+@use "sass:map";
+@import "../../../1-settings/scss/__settings.scss";
+@import "../../../2-tools/scss/__tools.scss";
+
+.dropdown-submenu {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 100%;
+  list-style: none;
+  top: 0;
+  border-radius: 8px;
+  background-color: var(--background-menu, #FFFFFF);
+  font: normal 400 0.75rem map.get($font, "sanserif");
+  box-shadow: 0px 0px 20px -4px rgba(117, 117, 117, 1);
+
+  &::before {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 1.666em;
+    position: absolute;
+    top: 10px;
+    right: -12px;
+    width: 0;
+    height: 0;
+    border-top: min(5px, max(0px, calc((100vw - 576px) * 999))) solid transparent;
+    border-left: min(12px, max(0px, calc((100vw - 576px) * 999))) solid var(--background-menu, #ffffff);
+    border-bottom: min(5px, max(0px, calc((100vw - 576px) * 999))) solid transparent;
+  }
+
+  &.-izquierda {
+    position: absolute;
+    // left: calc(-100% - 5px);
+    left: max(calc(-100% - 5px), min(0px, calc((100vw - 576px - 1px) * -999)));
+    top: max(0px, min(3em, calc((100vw - 576px - 1px) * -999)));
+    transition: left .3s ease-in-out, top .3s ease-in-out;
+  }
+
+  &:hover::before {
+    border-left: min(12px, max(0px, calc((100vw - 576px) * 999))) solid var(--hover-menu, lightblue);
+  }
+
+  >.submenuOption {
+    display: block;
+    flex: 1 0 100%;
+    height: 3em;
+    margin-block-start: 0;
+    border-bottom: 1px solid var(--menu-separator, #f4f4f4);
+    padding: 0 4em 0 1em;
+
+    &:hover {
+      background-color: var(--hover-menu, lightblue);
+    }
+
+    &:last-child {
+      border-style: none;
+    }
+
+    &::before {
+      content: attr(data-content);
+      display: inline-block;
+      height: 2em;
+      width: 2em;
+      padding: .25em;
+      position: relative;
+      top: 5px;
+      left: -.75em;
+      border-radius: 50%;
+      background-color: var(--background-theme, #f4f4f4);
+      border: 1px solid var(--profile-separator, #B5B5B5);
+      color: var(--profile-separator, #B5B5B5);
+      font: normal 800 1em map.get($font, "sanserif");
+      text-align: center;
+    }
+  }
+}

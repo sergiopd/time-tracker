@@ -1,0 +1,47 @@
+// Recomendaciones de colores para poder cumplir el nivel de contraste AA WCAG 2.1
+/*
+Verde de #5EBEA3 se cambió por #3E826D
+Gris botón pausa de #B5B5B5 se cambió por #757575
+Salmón de #FF9984 se cambió por #DB3930
+Los colores de los números (ambos) del Reloj deben de ser más obscuros.
+Y el contraste entre el Time tracker y el fondo debe de ser más alto.
+*/
+
+//Colores de botones y estado foto de perfil
+$pause-color: #757575;
+$start-color: #3E826D; // Se utiliza en el botón start y en el estado de actividad
+$stop-color: #DB3930;
+
+// Colores de fondos
+$background-theme: #f4f4f4;
+$background-timetracker: #B5B5B5;
+$background-menu: #FFFFFF;
+
+// Colores de tipografías
+$time-active: #000000;
+$time-acum: #B5B5B5;
+$user-name: #3F3F3F;
+$button-legend: #FFFFFF;
+
+//Otros colores
+$status: #5EBEA3; // Definición de variables para poder ser alteradadas con JS
+$hover-menu: lightblue;
+$profile-separator: #B5B5B5;
+$menu-separator: #f4f4f4;
+
+:root {
+  --button-pause-color: #757575;
+  --button-start-color: #3E826D;
+  --button-stop-color: #DB3930;
+  --background-theme: #f4f4f4;
+  --background-timetracker: #B5B5B5;
+  --background-menu: #FFFFFF;
+  --time-active: #000000;
+  --time-acum: #B5B5B5;
+  --user-name: #3F3F3F;
+  --button-legend: #FFFFFF;
+  --status: #5EBEA3;
+  --hover-menu: lightblue;
+  --profile-separator: #B5B5B5;
+  --menu-separator: #f4f4f4;
+}

@@ -1,0 +1,25 @@
+@use "sass:list";
+
+// Mixin de contenedor flex de sección */
+
+@mixin seccion($sec-padd, $sec-bgr, $just-cont, $borde...) {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: $just-cont;
+  align-items: center;
+  align-content: space-evenly;
+  height: auto;
+  width: 100%;
+  padding: $sec-padd;
+  background: $sec-bgr;
+
+  @if length($borde)>1 {
+    border-width: list.nth($borde, 1);
+    border-style: list.nth($borde, 2);
+    border-color: list.nth($borde, 3);
+  }
+
+  @else {
+    border: none;
+  }
+}
