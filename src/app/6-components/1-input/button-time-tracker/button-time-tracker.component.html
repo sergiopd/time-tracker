@@ -2,6 +2,8 @@
   [id]="infoToApply.idToApply"
   [class]="infoToApply.classToApply"
   type="submit"
+  (click)="handleClickButton()"
+  [ngClass]="infoToApply.active ? '-active' : '-inactive'"
 >
   {{ infoToApply.actionToApply }}
 </button>

@@ -4,7 +4,10 @@
   <button-time-tracker
     *ngFor="let info of buttonsInfo"
     [infoToApply]="info"
+    (eventClick)="handleEventClicked($event)"
   ></button-time-tracker>
 
-  <profile-section-component></profile-section-component>
+  <profile-section-component
+    [userStatus]="onOffstatus"
+  ></profile-section-component>
 </div>

@@ -9,13 +9,15 @@
     class="counter -timeWorked"
     role="timer"
     aria-label="Tiempo trabajado"
-    >00:00:00</span
+    >{{ timeToBeDisplayed.currentWorkedTime }}</span
   >
   <span
     id="counterAcum"
-    class="counter -timeAcum -inactive"
+    class="counter -timeAcum"
     role="log"
     aria-label="Tiempo acumulado"
+    *ngIf="timeToBeDisplayed.currentWorkedTime !== '00:00:00'"
   >
+    {{ timeToBeDisplayed.finalTimeWorked }}
   </span>
 </div>

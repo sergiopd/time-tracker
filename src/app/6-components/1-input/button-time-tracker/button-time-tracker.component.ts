@@ -6,12 +6,10 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./button-time-tracker.component.scss'],
 })
 export class ButtonTimeTrackerComponent {
-  @Input() classSelected: any;
   @Input() infoToApply: any;
-
   @Output() eventClick = new EventEmitter();
 
-  pauseCounter() {
-    this.eventClick.emit(this.infoToApply);
+  handleClickButton() {
+    this.eventClick.emit(this);
   }
 }

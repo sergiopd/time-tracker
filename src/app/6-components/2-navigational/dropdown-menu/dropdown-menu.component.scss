@@ -13,11 +13,13 @@
   list-style: none;
   position: absolute;
   right: 5%;
-  top: calc(100% + .78125em + 2px);
+  top: 100%;
+  opacity: 1;
   border-radius: 8px;
   background-color: var(--background-menu, #FFFFFF);
   font: normal 400 0.75rem map.get($font, "sanserif");
   box-shadow: 0px 0px 20px -4px rgba(117, 117, 117, 1);
+  transition: left .5s ease-in-out, top .5s ease-in-out;
 
   &::before {
     content: "";
@@ -34,9 +36,18 @@
     border-bottom: 12px solid var(--background-menu, #ffffff);
   }
 
+  &.-hidden {
+    display: none;
+    opacity: 0;
+    top: -100%;
+    transition: opacity .5s ease-in-out, top .5s ease-in-out;
+  }
+
+  /*
   &:hover::before {
     border-bottom: 12px solid var(--hover-menu, lightblue);
   }
+  */
 
   >.menuOption {
     display: block;
@@ -44,7 +55,7 @@
     height: 3em;
     border-bottom: 1px solid var(--menu-separator, #f4f4f4);
     text-align: center;
-    padding: 1em 0;
+    // padding: 1em 0;
     line-height: 1em;
 
     &.-izquierda {
@@ -63,22 +74,36 @@
     &.-submenuSpace {
       height: max(3em, min(9em, calc((100vw - 576px - 1px) * -999)));
     }
+
+    >a {
+      padding: 1em 0;
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
   }
 
-  .arrowLeft {
+  .arrowDown {
     height: 1.1666em;
     width: 1.1666em;
     position: absolute;
     left: 1em;
-    transform: scaleX(1);
-    // transform: rotate(0deg);
-    // transform-origin: 50% 50%;
+    top: 1em;
+    transform: rotate(0deg);
+    transform-origin: 50% 50%;
     transition: transform 0.3s;
 
-    &.-rotateX {
-      transform: scaleX(-1);
-      // transform: rotate(180deg);
-      // transform-origin: 50% 50%;
+    &.-rotate {
+      transform: rotate(180deg);
+      transform-origin: 50% 50%;
+
+      @include mayor-a-celular {
+        transform: rotate(-90deg);
+      }
+    }
+
+    @include mayor-a-celular {
+      transform: rotate(90deg);
     }
   }
 }

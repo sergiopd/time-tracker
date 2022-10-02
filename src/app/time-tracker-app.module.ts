@@ -11,6 +11,9 @@ import { ProfileSectionComponent } from './6-components/2-navigational/profile-s
 import { TimeDisplayComponent } from './6-components/3-informational/time-display/time-display.component';
 
 // Services
+import { SetButtonClass } from './services/set-button-class.service';
+import { CalcWorkedTime } from './services/calc-worked-time.service';
+import { HandleClickButton } from './services/handle-click-button.service';
 
 // Declarations
 @NgModule({
@@ -23,7 +26,7 @@ import { TimeDisplayComponent } from './6-components/3-informational/time-displa
     TimeDisplayComponent,
   ],
   imports: [BrowserModule],
-  providers: [],
+  providers: [SetButtonClass, CalcWorkedTime, HandleClickButton],
   bootstrap: [TimeTrackerAppComponent],
 })
 export class TimeTrackerAppModule {}

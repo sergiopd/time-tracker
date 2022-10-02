@@ -1,18 +1,32 @@
-<div class="profile-section">
+<div
+  class="profile-section"
+  (mouseenter)="changeStatusMenu($event.target)"
+  (mouseleave)="changeStatusMenu($event.target)"
+  (click)="changeClickStatusMenu($event.target)"
+>
   <img
     class="photoProfile"
     src="assets/img/foto-perfil.jpg"
     alt="Foto de perfil del usuario"
   />
-  <span class="status"> </span>
+  <span
+    class="status"
+    role="status"
+    [ngClass]="{
+      '-offline': userStatus === 'offline',
+      '-online': userStatus === 'online',
+      '-pause': userStatus === 'paused'
+    }"
+  >
+  </span>
   <span class="userName">Kelly Pierce</span>
 
   <!--Dropdown menu-->
-  <dropdown-menu-component></dropdown-menu-component>
+  <dropdown-menu-component [hideMenu]="displayChild"></dropdown-menu-component>
 
   <svg
     class="arrowDown"
-    onclick="rotateArrowDown()"
+    [ngClass]="displayChild ? '-rotate' : ''"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 448 512"
   >

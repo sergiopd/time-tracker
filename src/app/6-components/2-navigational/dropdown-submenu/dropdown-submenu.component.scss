@@ -10,8 +10,12 @@
   justify-content: center;
   height: auto;
   width: 100%;
+  position: absolute;
+  left: max(calc(-100% - 5px), min(0px, calc((100vw - 576px - 1px) * -999)));
+  top: max(0px, min(3em, calc((100vw - 576px - 1px) * -999)));
+  transition: left .5s ease-in-out, top .5s ease-in-out, opacity .5s ease-in-out;
   list-style: none;
-  top: 0;
+  opacity: 1;
   border-radius: 8px;
   background-color: var(--background-menu, #FFFFFF);
   font: normal 400 0.75rem map.get($font, "sanserif");
@@ -32,16 +36,16 @@
     border-bottom: min(5px, max(0px, calc((100vw - 576px) * 999))) solid transparent;
   }
 
-  &.-izquierda {
-    position: absolute;
-    // left: calc(-100% - 5px);
-    left: max(calc(-100% - 5px), min(0px, calc((100vw - 576px - 1px) * -999)));
-    top: max(0px, min(3em, calc((100vw - 576px - 1px) * -999)));
-    transition: left .3s ease-in-out, top .3s ease-in-out;
-  }
-
   &:hover::before {
     border-left: min(12px, max(0px, calc((100vw - 576px) * 999))) solid var(--hover-menu, lightblue);
+  }
+
+  &.-hidden {
+    display: none;
+    opacity: 0;
+    left: 0;
+    top: min(0px, max(-36px, calc((100vw - 576px - 1px) * 999)));
+    transition: left .5s ease-in-out, top .5s ease-in-out, opacity .5s ease-in-out;
   }
 
   >.submenuOption {

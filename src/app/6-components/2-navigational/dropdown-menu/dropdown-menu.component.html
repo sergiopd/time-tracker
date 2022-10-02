@@ -1,22 +1,56 @@
-<ul class="dropdown-menu">
-  <li class="menuOption -submenuSpace">
+<ul
+  class="dropdown-menu"
+  [ngClass]="hideMenu ? '' : '-hidden'"
+  [attr.aria-expanded]="hideMenu ? '' : 'false'"
+  aria-role="menu"
+>
+  <li
+    class="menuOption"
+    (mouseenter)="changeStatusSubmenu($event.target)"
+    (mouseleave)="hideSubmenuOnLeave($event.target)"
+    (click)="changeClickStatusSubmenu($event.target)"
+    [ngClass]="displayChildMisCuentas ? '-submenuSpace' : ''"
+  >
+    <a href="#">Mis cuentas</a>
     <svg
-      class="arrowLeft"
-      onclick="rotateArrowLeft()"
+      class="arrowDown"
+      [ngClass]="displayChildMisCuentas ? '-rotate' : ''"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 320 512"
+      viewBox="0 0 448 512"
     >
       <path
-        d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
+        d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
       />
     </svg>
-    <a href="#">Mis cuentas</a>
 
     <!-- Dropdown SUBmenu-->
-    <dropdown-submenu-component></dropdown-submenu-component>
+    <dropdown-submenu-component
+      [hideSubmenu]="displayChildMisCuentas"
+    ></dropdown-submenu-component>
     <!-- End submenu -->
   </li>
-  <li class="menuOption"><a href="#">Vista empleado</a></li>
-  <li class="menuOption"><a href="#">Mi perfil</a></li>
-  <li class="menuOption"><a href="#">Cerrar sesión</a></li>
+  <li
+    class="menuOption"
+    (mouseenter)="changeStatusSubmenu($event.target)"
+    (mouseleave)="hideSubmenuOnLeave($event.target)"
+    (click)="changeClickStatusSubmenu($event.target)"
+  >
+    <a href="#">Vista empleado</a>
+  </li>
+  <li
+    class="menuOption"
+    (mouseenter)="changeStatusSubmenu($event.target)"
+    (mouseleave)="hideSubmenuOnLeave($event.target)"
+    (click)="changeClickStatusSubmenu($event.target)"
+  >
+    <a href="#">Mi perfil</a>
+  </li>
+  <li
+    class="menuOption"
+    (mouseenter)="changeStatusSubmenu($event.target)"
+    (mouseleave)="hideSubmenuOnLeave($event.target)"
+    (click)="changeClickStatusSubmenu($event.target)"
+  >
+    <a href="#">Cerrar sesión</a>
+  </li>
 </ul>

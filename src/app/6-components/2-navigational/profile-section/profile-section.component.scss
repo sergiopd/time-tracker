@@ -6,7 +6,8 @@
   display: flex;
   flex: 1 0 auto;
   width: max(196px, min(90vw, calc((100vw - 576px - 1px) * -999)));
-  margin: max(0px, min(15px, calc((100vw - 576px - 1px) * -999))) 0 0 0;
+  // margin: max(0px, min(15px, calc((100vw - 576px - 1px) * -999))) 0 0 0;
+  height: 3.6em;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -35,8 +36,19 @@
     height: 0.75em;
     width: 0.75em;
     margin-right: 0.6666em;
-    background-color: var(--status, #5EBEA3);
     border-radius: 50%;
+
+    &.-online {
+      background-color: var(--status, #5EBEA3);
+    }
+
+    &.-pause {
+      background-color: var(--button-pause-color, #DB3930);
+    }
+
+    &.-offline {
+      background-color: var(--button-stop-color, #DB3930);
+    }
   }
 
   >.userName {
@@ -53,7 +65,7 @@
     // transform-origin: 50% 50%;
     transition: transform 0.3s;
 
-    &.-rotateY {
+    &.-rotate {
       transform: scaleY(-1);
       // transform: rotate(180deg);
       // transform-origin: 50% 50%;

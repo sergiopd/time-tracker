@@ -7,8 +7,9 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 0.5em;
+  // padding: max(0px, min(8px, calc((100vw - 576px) * -999)));
   width: fit-content;
+  max-width: 85%;
   margin: 40px auto;
   background-color: #e9e9e9;
   border-radius: 100px;
