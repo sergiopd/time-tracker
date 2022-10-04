@@ -1,7 +1,7 @@
 # TimeTracker
 Una prueba de GET se puede verificar con el botón "Pausar" en el console y deplegara un mensaje y el registro.
 Modifiqué algunos colores por cuestión de accesibilidad, ya que no cumplían con el mínimo contraste requerido por los estándares WACG.
-La versión final se encuentra en la rama: "version-1"
+La versión final se encuentra en la rama: "version-1". Se realizó con un diseño fluido sin media queries.
 
 ## Development server
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
