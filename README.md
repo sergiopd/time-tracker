@@ -1,12 +1,10 @@
 # TimeTracker
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
 Una prueba de GET se puede verificar con el botón "Pausar" en el console y deplegara un mensaje y el registro.
 Modifiqué algunos colores por cuestión de accesibilidad, ya que no cumplían con el mínimo contraste requerido por los estándares WACG.
 La versión final se encuentra en la rama: "version-1"
 
 ## Development server
-
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
