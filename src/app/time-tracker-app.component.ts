@@ -23,12 +23,6 @@ export class TimeTrackerAppComponent implements OnInit {
     this.buttonsInfo = this.setButtonClass.getInfoClass();
   }
 
-  /* timesToDisplay = {
-    workedTime: '00:00:00',
-    timeAcum: '00:00:00',
-    status: 'offline',
-  }; */
-
   prueba: any;
 
   handleEventClicked(data: any) {
@@ -40,12 +34,6 @@ export class TimeTrackerAppComponent implements OnInit {
     }
 
     this.handleClickButton.countingTime(data);
-    /* this.timesToDisplay = {
-      workedTime: this.handleClickButton.timesWorked.currentWorkedTime,
-      timeAcum: this.handleClickButton.timesWorked.finalTimeWorked,
-      status: this.handleClickButton.timesWorked.status,
-      this.onOffstatus = this.timesToDisplay.status;
-    }; */
 
     this.onOffstatus = this.handleClickButton.timesWorked.workStatus;
   }

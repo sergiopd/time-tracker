@@ -1,6 +1,8 @@
 // Angular
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Components
 import { TimeTrackerAppComponent } from './time-tracker-app.component';
@@ -14,6 +16,7 @@ import { TimeDisplayComponent } from './6-components/3-informational/time-displa
 import { SetButtonClass } from './services/set-button-class.service';
 import { CalcWorkedTime } from './services/calc-worked-time.service';
 import { HandleClickButton } from './services/handle-click-button.service';
+import { HttpHandler } from './services/http-handler.service';
 
 // Declarations
 @NgModule({
@@ -25,8 +28,8 @@ import { HandleClickButton } from './services/handle-click-button.service';
     ProfileSectionComponent,
     TimeDisplayComponent,
   ],
-  imports: [BrowserModule],
-  providers: [SetButtonClass, CalcWorkedTime, HandleClickButton],
+  imports: [BrowserModule, HttpClientModule, ReactiveFormsModule, FormsModule],
+  providers: [SetButtonClass, CalcWorkedTime, HandleClickButton, HttpHandler],
   bootstrap: [TimeTrackerAppComponent],
 })
 export class TimeTrackerAppModule {}
